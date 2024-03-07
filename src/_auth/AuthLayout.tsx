@@ -14,7 +14,7 @@ const AuthLayout = () => {
           </section>
 
           <img 
-            src="/public/assets/images/Login-Side photo.jpg"
+            src="/public/assets/images/SigninFormPic.jpg"
             alt="logo"
             className="hidden xl:block h-screen w-1/2 object-cover bg-no-repeat"/>
         </>
