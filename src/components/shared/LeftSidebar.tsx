@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { useSignOutAccount } from "@/lib/react-query/queriesAndMutation";
 import { useEffect } from "react";
 import { useUserContext } from "@/context/AuthContext";
-import { sidebarLinks } from "@/constants";
+import { sidebarLinks } from "@/constanst";
 import { INavLink } from "@/types";
 
 const LeftSidebar = () => {
