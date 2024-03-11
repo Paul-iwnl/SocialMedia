@@ -18,7 +18,7 @@ import { PostValidation } from "@/lib/validation";
 import { Models } from "appwrite";
 import { useUserContext } from "@/context/AuthContext";
 import { useToast } from "../ui/use-toast";
-import { useCreatePost } from "@/lib/react-query/queriesAndMutation";
+import { useCreatePost, useUpdatePost } from "@/lib/react-query/queriesAndMutation";
 
 type PostFormProps = {
   post?: Models.Document;
@@ -41,13 +41,13 @@ const PostForm = ({ post, action }: PostFormProps) => {
   // Query
   const { mutateAsync: createPost, isPending: isLoadingCreate } =
     useCreatePost();
-  /*const { mutateAsync: updatePost, isLoading: isLoadingUpdate } =
-    useUpdatePost(); */
+  const { mutateAsync: updatePost, isPending: isLoadingUpdate } =
+    useUpdatePost();
 
   // Handler
   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
     // ACTION = UPDATE
-    /*if (post && action === "Update") {
+    if (post && action === "Update") {
       const updatedPost = await updatePost({
         ...value,
         postId: post.$id,
@@ -61,7 +61,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         });
       }
       return navigate(`/posts/${post.$id}`);
-    }*/
+    }
 
     // ACTION = CREATE
     const newPost = await createPost({
@@ -149,9 +149,9 @@ const PostForm = ({ post, action }: PostFormProps) => {
           <Button
             type="submit"
             className="shad-button_primary whitespace-nowrap"
-            disabled={isLoadingCreate}
+            disabled={isLoadingCreate || isLoadingUpdate}
           >
-            {(isLoadingCreate ) /*&& <Loader />*/}
+            {(isLoadingCreate || isLoadingUpdate) && 'Loading...'}
             {action} Post
           </Button>
         </div>
