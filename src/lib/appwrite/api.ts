@@ -352,7 +352,8 @@ export async function deletePost(postId?: string, imageId?: string) {
 
 // ============================== LIKE / UNLIKE POST
 export async function likePost(postId: string, likesArray: string[]) {
-  try {
+  try 
+  {
     const updatedPost = await databases.updateDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
@@ -365,14 +366,17 @@ export async function likePost(postId: string, likesArray: string[]) {
     if (!updatedPost) throw Error;
 
     return updatedPost;
-  } catch (error) {
+  } 
+  catch (error) 
+  {
     console.log(error);
   }
 }
 
 // ============================== SAVE POST
 export async function savePost(userId: string, postId: string) {
-  try {
+  try 
+  {
     const updatedPost = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.savesCollectionId,
@@ -386,7 +390,9 @@ export async function savePost(userId: string, postId: string) {
     if (!updatedPost) throw Error;
 
     return updatedPost;
-  } catch (error) {
+  } 
+  catch (error) 
+  {
     console.log(error);
   }
 }
@@ -543,4 +549,4 @@ export async function updateUser(user: IUpdateUser) {
   } catch (error) {
     console.log(error);
   }
-}
+} 
