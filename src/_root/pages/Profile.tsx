@@ -10,21 +10,8 @@ import {
 import { LikedPosts } from "@/_root/pages";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queriesAndMutation";
-import { Button } from "@/components/ui/button";
 import Loader from "@/components/shared/Loader";
 import GridPostList from "@/components/shared/GridPostList";
-
-interface StabBlockProps {
-  value: string | number;
-  label: string;
-}
-
-const StatBlock = ({ value, label }: StabBlockProps) => (
-  <div className="flex-center gap-2">
-    <p className="small-semibold lg:body-bold text-primary-500">{value}</p>
-    <p className="small-medium lg:base-medium text-light-2">{label}</p>
-  </div>
-);
 
 const Profile = () => {
   const { id } = useParams();

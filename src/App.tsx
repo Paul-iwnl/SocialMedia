@@ -1,5 +1,5 @@
 import {Routes , Route} from "react-router-dom";
-import { Home,Explore,Saved,AllUsers,CreatePost,EditPost,PostDetails,Profile,UpdateProfile } from "./_root/pages";
+import { Home,Explore,Saved,AllUsers,CreatePost,EditPost,PostDetails,Profile } from "./_root/pages";
 import SigninForm from "./_auth/forms/SigninForm";
 import SignupForm from "./_auth/forms/SignupForm";
 import './globals.css';
