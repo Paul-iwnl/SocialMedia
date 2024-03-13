@@ -33,7 +33,7 @@ const PostDetails = () => {
                 <img
                   src={
                     post?.creator?.imageUrl ||
-                    `/public/assets/icons/profile-placeholder.svg`
+                    `/assets/icons/profile-placeholder.svg`
                   }
                   alt="creator"
                   className="rounded-full w-8 h-8 lg:w-12 lg:h-12"
@@ -56,7 +56,7 @@ const PostDetails = () => {
                   className={`${user.id !== post?.creator.$id && "hidden"}`}
                 >
                   <img
-                    src="/public/assets/icons/edit.svg"
+                    src="/assets/icons/edit.svg"
                     width={24}
                     height={24}
                     alt="edit"
@@ -70,7 +70,7 @@ const PostDetails = () => {
                   }`}
                 >
                   <img
-                    src="/public/assets/icons/delete.svg"
+                    src="/assets/icons/delete.svg"
                     alt="delete"
                     width={24}
                     height={24}
